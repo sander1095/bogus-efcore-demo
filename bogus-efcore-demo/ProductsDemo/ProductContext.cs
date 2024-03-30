@@ -15,8 +15,10 @@ public class ProductContext : DbContext
         // Necessary to use a composite key
         modelBuilder.Entity<ProductProductCategory>().HasKey(x => new { x.ProductId, x.CategoryId });
 
+        // DEMO: Uncomment this line
         //SetupManualSeedData(modelBuilder);
 
+        // DEMO: Uncomment this line
         //SetupSeedDataWithBogus(modelBuilder);
 
         base.OnModelCreating(modelBuilder);

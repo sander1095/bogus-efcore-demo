@@ -30,8 +30,10 @@ public class Worker(IServiceScopeFactory serviceScopeFactory) : BackgroundServic
         var table = new Table();
         table.AddColumn("ID");
         table.AddColumn("Name");
-        table.AddColumn("CreationDate");
+        // DEMO: Uncomment this line
+        //table.AddColumn("Description");
         table.AddColumn("Categories");
+        table.AddColumn("CreationDate");
 
         // Populating the table with product entries
         foreach (var product in products.Take(20))
@@ -62,6 +64,7 @@ public class Worker(IServiceScopeFactory serviceScopeFactory) : BackgroundServic
     private static string[] GetRowsToRender(Product product) => [
         product.Id.ToString(),
         product.Name,
+        // DEMO: Uncomment this line
         //product.Description,
         string.Join(",", product.ProductProductCategories.Select(x => x.Category.Name)),
         product.CreationDate.ToString()

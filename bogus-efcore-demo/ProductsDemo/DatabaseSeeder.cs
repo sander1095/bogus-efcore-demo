@@ -27,7 +27,7 @@ public class DatabaseSeeder
             .RuleFor(x => x.CreationDate, f => f.Date.FutureOffset(
                 refDate: new DateTimeOffset(2024, 4, 15, 18, 0, 0, TimeSpan.FromHours(1))));
 
-            // STEP: Enable this line
+            // DEMO: Uncomment this line
             //.RuleFor(x => x.Description, f => f.Commerce.ProductDescription());
 
         var products = Enumerable.Range(1, amount)

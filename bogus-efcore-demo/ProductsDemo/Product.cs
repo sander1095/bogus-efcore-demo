@@ -6,8 +6,8 @@
         public string Name { get; set; } = null!;
         public DateTimeOffset CreationDate { get; set; }
         public ICollection<ProductProductCategory> ProductProductCategories { get; set; } = new List<ProductProductCategory>();
-        
-        // STEP: Enable this during the demo and add a migration
+
+        // DEMO: Uncomment this line
         //public string Description { get; set; } = null!; 
     }
 
