@@ -54,13 +54,12 @@ public class ProductContext : DbContext
 
     private static void SetupSeedDataWithBogus(ModelBuilder modelBuilder)
     {
-        //// Generate seed data with Bogus
-        //var databaseSeeder = new DatabaseSeeder();
+        // Generate seed data with Bogus
+        var databaseSeeder = new DatabaseSeeder();
 
-        //// Apply the seed data on the tables
-        //modelBuilder.Entity<Product>().HasData(databaseSeeder.Products);
-        //modelBuilder.Entity<ProductCategory>().HasData(databaseSeeder.ProductCategories);
-        //modelBuilder.Entity<ProductProductCategory>().HasData(databaseSeeder.ProductProductCategories);
-
+        // Apply the seed data on the tables
+        modelBuilder.Entity<Product>().HasData(databaseSeeder.Products);
+        modelBuilder.Entity<ProductCategory>().HasData(databaseSeeder.ProductCategories);
+        modelBuilder.Entity<ProductProductCategory>().HasData(databaseSeeder.ProductProductCategories);
     }
 }

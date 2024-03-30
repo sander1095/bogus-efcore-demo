@@ -39,7 +39,7 @@ namespace ProductsDemo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("ProductsDemo.ProductCategory", b =>
@@ -56,7 +56,7 @@ namespace ProductsDemo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductCategories");
+                    b.ToTable("ProductCategories", (string)null);
                 });
 
             modelBuilder.Entity("ProductsDemo.ProductProductCategory", b =>
@@ -71,7 +71,7 @@ namespace ProductsDemo.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ProductProductCategories");
+                    b.ToTable("ProductProductCategories", (string)null);
                 });
 
             modelBuilder.Entity("ProductsDemo.ProductProductCategory", b =>
