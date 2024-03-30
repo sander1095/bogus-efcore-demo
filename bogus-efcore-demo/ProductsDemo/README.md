@@ -19,7 +19,8 @@
 	7. Run the application and showcase it.
 13. Now showcase changing the model and things still working:
 	1. Uncomment `Description` in `Product.cs`
-	2. Uncomment line 33 in `DatabaseSeeder.cs`
+	2. Uncomment `Description` in `GetRowsToRender` in `Worker.cs`
+	2. Uncomment line 31 in `DatabaseSeeder.cs`
 	3. Run `dotnet ef migrations add AddedDescriptionToProductWithSeedData`
     4. Run `dotnet ef database update`
 	5. Run the application and showcase it.

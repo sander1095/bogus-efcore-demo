@@ -12,7 +12,10 @@ public class Worker(IServiceScopeFactory serviceScopeFactory) : BackgroundServic
         await using var scope = _serviceScopeFactory.CreateAsyncScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<ProductContext>();
 
-        var products = await dbContext.Products.Include(x => x.ProductProductCategories).ThenInclude(x => x.Category).ToListAsync();
+        var products = await dbContext.Products
+            .Include(x => x.ProductProductCategories)
+            .ThenInclude(x => x.Category)
+            .ToListAsync();
 
         DrawTable(products);
     }
@@ -21,16 +24,20 @@ public class Worker(IServiceScopeFactory serviceScopeFactory) : BackgroundServic
     {
         DrawLine();
 
+        DrawBigText("Demo");
+
         // Creating the table
         var table = new Table();
         table.AddColumn("ID");
         table.AddColumn("Name");
+        table.AddColumn("CreationDate");
         table.AddColumn("Categories");
 
         // Populating the table with product entries
-        foreach (var product in products)
+        foreach (var product in products.Take(20))
         {
-            table.AddRow(product.Id.ToString(), product.Name, string.Join(",", product.ProductProductCategories.Select(x => x.Category.Name)));
+            var getRowsToRender = GetRowsToRender(product);
+            table.AddRow(getRowsToRender);
         }
 
         table.Centered();
@@ -38,12 +45,25 @@ public class Worker(IServiceScopeFactory serviceScopeFactory) : BackgroundServic
         // Rendering the table
         AnsiConsole.Write(table);
 
+        DrawBigText($"Total: {products.Count} products");
+
         static void DrawLine()
         {
             var rule = new Rule("[green]EF <3 Bogus[/]");
             AnsiConsole.Write(rule);
-            AnsiConsole.Write(new FigletText("Demo").Centered());
+        }
+
+        static void DrawBigText(string text)
+        {
+            AnsiConsole.Write(new FigletText(text).Centered());
         }
     }
 
+    private static string[] GetRowsToRender(Product product) => [
+        product.Id.ToString(),
+        product.Name,
+        //product.Description,
+        string.Join(",", product.ProductProductCategories.Select(x => x.Category.Name)),
+        product.CreationDate.ToString()
+    ];
 }
