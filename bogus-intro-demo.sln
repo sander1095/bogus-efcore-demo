@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BogusBasics", "bogus-intro-demo\BogusBasics\BogusBasics.csproj", "{9C603A82-E864-4B7C-B531-45B2936907C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C603A82-E864-4B7C-B531-45B2936907C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C603A82-E864-4B7C-B531-45B2936907C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C603A82-E864-4B7C-B531-45B2936907C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C603A82-E864-4B7C-B531-45B2936907C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27074FE3-5A80-4527-AD43-9CDC7565A776}
+	EndGlobalSection
+EndGlobal
