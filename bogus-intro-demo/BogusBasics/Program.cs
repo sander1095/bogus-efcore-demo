@@ -18,7 +18,7 @@ public static class Program
    public static void Main()
    {
       int userId = 0;
-      var userFaker = new Faker<User>("")
+      var userFaker = new Faker<User>()
          .UseSeed(777)
          .UseDateTimeReference(DateTime.Parse("1/1/1982"))
          .StrictMode(true) // Ensure all known properties have rules
