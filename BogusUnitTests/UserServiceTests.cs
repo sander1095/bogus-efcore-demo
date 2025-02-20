@@ -19,8 +19,6 @@ public class User
     }
 }
 
-
-
 public class UserService
 {
     public bool SaveUser(User user)
@@ -31,6 +29,7 @@ public class UserService
         return true;
     }
 }
+
 public class UserServiceTests
 {
     private static int UserId = 1;
