@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace ProductsDemo;
+namespace BogusEfCoreHasData;
 
 public class ProductContext : DbContext
 {

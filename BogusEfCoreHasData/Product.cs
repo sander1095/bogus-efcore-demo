@@ -1,4 +1,4 @@
-﻿namespace ProductsDemo
+﻿namespace BogusEfCoreHasData
 {
     public class Product
     {

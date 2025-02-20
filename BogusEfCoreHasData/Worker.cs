@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Spectre.Console;
 
-namespace ProductsDemo;
+namespace BogusEfCoreHasData;
 
 public class Worker(IServiceScopeFactory serviceScopeFactory) : BackgroundService
 {

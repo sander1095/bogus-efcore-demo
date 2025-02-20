@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "code", "code", "{4B868080-9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "efcore-practical-example", "slides\code\efcore-practical-example\efcore-practical-example.csproj", "{461968FA-A224-4D22-975C-B402245D7DE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BogusEfCoreHasData", "BogusEfCoreHasData\ProductsDemo.csproj", "{C2091D85-BA9C-4EA0-B19C-2DC4B478690B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BogusEfCoreHasData", "BogusEfCoreHasData\BogusEfCoreHasData.csproj", "{C2091D85-BA9C-4EA0-B19C-2DC4B478690B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BogusBasics", "BogusBasics\BogusBasics.csproj", "{356320F9-0430-4D35-8138-F57F73C81E91}"
 EndProject

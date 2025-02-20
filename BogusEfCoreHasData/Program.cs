@@ -1,5 +1,5 @@
+using BogusEfCoreHasData;
 using Microsoft.EntityFrameworkCore;
-using ProductsDemo;
 
 var builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddHostedService<Worker>();
