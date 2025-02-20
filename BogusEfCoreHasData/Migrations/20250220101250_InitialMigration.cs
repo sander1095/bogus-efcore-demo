@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ProductsDemo.Migrations
+namespace BogusEfCoreHasData.Migrations
 {
     /// <inheritdoc />
     public partial class InitialMigration : Migration
