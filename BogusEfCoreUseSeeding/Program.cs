@@ -8,7 +8,7 @@ builder.Services.AddHostedService<Worker>();
 builder.Services.AddDbContext<ProductContext>(x =>
 {
     x.UseSqlServer(builder.Configuration.GetConnectionString("Database")!)
-    .UseSeeding((context, boolean) =>
+    .UseSeeding((context, _) =>
     {
         var databaseSeeder = new DatabaseSeeder();
         var productSet = context.Set<Product>();
@@ -58,7 +58,10 @@ builder.Services.AddDbContext<ProductContext>(x =>
 
         foreach (var productProductCategory in databaseSeeder.ProductProductCategories)
         {
-            if (!await productProductCategorySet.AnyAsync(x => x.ProductId == productProductCategory.ProductId && x.CategoryId ==productProductCategory.CategoryId, cancellationToken))
+            if (!await productProductCategorySet.AnyAsync(x => 
+                x.ProductId == productProductCategory.ProductId && 
+                x.CategoryId == productProductCategory.CategoryId, cancellationToken)
+            )
             {
                 productProductCategorySet.Add(productProductCategory);
             }
