@@ -1,7 +1,6 @@
 ﻿using Bogus;
-using BogusEfCoreUseSeeding;
 
-namespace BogusEfCoreHasData;
+namespace BogusEfCoreUseSeeding;
 
 public class DatabaseSeeder
 {

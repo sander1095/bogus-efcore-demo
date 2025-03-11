@@ -1,4 +1,3 @@
-using BogusEfCoreHasData;
 using BogusEfCoreUseSeeding;
 using Microsoft.EntityFrameworkCore;
 
@@ -58,8 +57,8 @@ builder.Services.AddDbContext<ProductContext>(x =>
 
         foreach (var productProductCategory in databaseSeeder.ProductProductCategories)
         {
-            if (!await productProductCategorySet.AnyAsync(x => 
-                x.ProductId == productProductCategory.ProductId && 
+            if (!await productProductCategorySet.AnyAsync(x =>
+                x.ProductId == productProductCategory.ProductId &&
                 x.CategoryId == productProductCategory.CategoryId, cancellationToken)
             )
             {
@@ -69,7 +68,7 @@ builder.Services.AddDbContext<ProductContext>(x =>
 
         foreach (var productCategory in databaseSeeder.ProductCategories)
         {
-            if (! await productCategorySet.AnyAsync(x => x.Name == productCategory.Name, cancellationToken))
+            if (!await productCategorySet.AnyAsync(x => x.Name == productCategory.Name, cancellationToken))
             {
                 productCategorySet.Add(productCategory);
             }
