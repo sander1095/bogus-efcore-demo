@@ -80,8 +80,18 @@ builder.Services.AddDbContext<ProductContext>(x =>
 
 var host = builder.Build();
 
-// Uncomment to run the database seeding on startup
-//await using var scope = host.Services.GetRequiredService<IServiceScopeFactory>().CreateAsyncScope();
-//await scope.ServiceProvider.GetRequiredService<ProductContext>().Database.EnsureCreatedAsync();
+if (args.Contains("--clear"))
+{
+    await using var scope = host.Services.GetRequiredService<IServiceScopeFactory>().CreateAsyncScope();
+    await scope.ServiceProvider.GetRequiredService<ProductContext>().Database.ExecuteSqlRawAsync(@"
+        delete from ProductCategories;
+        delete from Products;
+        delete from ProductProductCategories");
+}
+if (args.Contains("--seed"))
+{
+    await using var scope = host.Services.GetRequiredService<IServiceScopeFactory>().CreateAsyncScope();
+    await scope.ServiceProvider.GetRequiredService<ProductContext>().Database.EnsureCreatedAsync();
+}
 
 host.Run();
