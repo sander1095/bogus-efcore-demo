@@ -21,11 +21,7 @@ public class DatabaseSeeder
         var productFaker = new Faker<Product>()
             .RuleFor(x => x.Id, f => productId++) // Each product will have an incrementing id.
             .RuleFor(x => x.Name, f => f.Commerce.ProductName())
-            // The refDate is very important! Without it, it will generate a random date based on the CURRENT date on your system.
-            // Generating a date based on the system date is not deterministic!
-            // So the solution is to pass in a constant date instead which will be used to generate a random date
-            .RuleFor(x => x.CreationDate, f => f.Date.FutureOffset(
-                refDate: new DateTimeOffset(2024, 4, 15, 18, 0, 0, TimeSpan.FromHours(1))));
+            .RuleFor(x => x.CreationDate, f => (new DateTimeOffset(2024, 4, 15, 18, 0, 0, TimeSpan.FromHours(1))).Add(TimeSpan.FromMinutes(productId)));
 
         // DEMO: Uncomment this line
         //.RuleFor(x => x.Description, f => f.Commerce.ProductDescription());
